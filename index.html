@@ -99,6 +99,37 @@
       .actions .cta { width:100%; }
       .card { padding:20px; }
     }
+    
+@media (max-width: 650px) {
+  .top {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .top .logo {
+    text-align: center;
+  }
+
+  .top nav {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 16px;
+  }
+
+  .top nav a {
+    margin: 0;
+    font-size: 0.85rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.8rem, 7vw, 2.4rem);
+    line-height: 1.5;
+  }
+}
+
     @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
   </style>
 </head>
