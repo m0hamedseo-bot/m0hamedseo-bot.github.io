@@ -80,6 +80,7 @@
     .status { display:none; margin-top:18px; padding:13px 15px; border-radius:10px; background:var(--soft); color:var(--text); }
     .status.show { display:block; }
     .status.error { background:var(--danger-bg); color:var(--danger); }
+    .status a { display:inline-block; margin-top:9px; font-weight:900; text-decoration:underline; text-underline-offset:3px; }
     .status.warn { background:var(--warning-bg); color:var(--warning); }
     .results { display:none; margin-top:22px; }
     .results.show { display:block; }
@@ -408,10 +409,24 @@
           results.scrollIntoView({ behavior: 'smooth', block: 'start' });
         } catch (error) {
           var message = error && error.message ? error.message : '';
-          if (error instanceof TypeError) {
-            message = 'تعذّر الاتصال بخدمة Google من المتصفح. جرّب مرة أخرى أو استخدم رابط PageSpeed Insights المباشر أدناه.';
+          var quotaError = /quota exceeded|queries per day|rate limit|resource_exhausted|429/i.test(message);
+
+          if (quotaError) {
+            statusBox.textContent = 'وصلت خدمة PageSpeed Insights API إلى حد الطلبات المتاح حالياً. هذا لا يعني وجود مشكلة في موقعك. يمكنك تشغيل الفحص من أداة Google الرسمية عبر الرابط التالي:';
+            statusBox.className = 'status show warn';
+            var fallbackLink = document.createElement('a');
+            fallbackLink.href = 'https://pagespeed.web.dev/analysis?url=' + encodeURIComponent(url);
+            fallbackLink.target = '_blank';
+            fallbackLink.rel = 'noopener noreferrer';
+            fallbackLink.textContent = 'افتح تقرير Google PageSpeed Insights';
+            statusBox.appendChild(document.createElement('br'));
+            statusBox.appendChild(fallbackLink);
+          } else {
+            if (error instanceof TypeError) {
+              message = 'تعذّر الاتصال بخدمة Google من المتصفح. جرّب مرة أخرى أو افتح تقرير PageSpeed Insights مباشرة.';
+            }
+            setStatus(message || 'حدث خطأ غير متوقع أثناء الفحص. حاول مرة أخرى.', 'error');
           }
-          setStatus(message || 'حدث خطأ غير متوقع أثناء الفحص. حاول مرة أخرى.', 'error');
         } finally {
           runButton.disabled = false;
           runButton.textContent = 'أعد فحص الصفحة';
