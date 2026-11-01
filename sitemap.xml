@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://m0hamedseo-bot.github.io/</loc>
-  </url>
-  <url>
-    <loc>https://m0hamedseo-bot.github.io/seo-ecommerce.html</loc>
-  </url>
-  <url>
-    <loc>https://m0hamedseo-bot.github.io/seo-audit.html</loc>
-  </url>
+  <url><loc>https://m0hamedseo-bot.github.io/</loc></url>
+  <url><loc>https://m0hamedseo-bot.github.io/index-en.html</loc></url>
+  <url><loc>https://m0hamedseo-bot.github.io/seo-ecommerce.html</loc></url>
+  <url><loc>https://m0hamedseo-bot.github.io/seo-ecommerce-en.html</loc></url>
+  <url><loc>https://m0hamedseo-bot.github.io/seo-audit.html</loc></url>
+  <url><loc>https://m0hamedseo-bot.github.io/seo-audit-en.html</loc></url>
 </urlset>
