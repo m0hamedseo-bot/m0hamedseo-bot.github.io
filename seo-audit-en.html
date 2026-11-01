@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b6b63">
+  <meta name="description" content="Free website SEO and speed check using Google PageSpeed Insights and Lighthouse. Review performance, SEO, accessibility, and best-practice signals.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://m0hamedseo-bot.github.io/seo-audit-en.html">
+  <link rel="alternate" hreflang="ar" href="https://m0hamedseo-bot.github.io/seo-audit.html">
+  <link rel="alternate" hreflang="en" href="https://m0hamedseo-bot.github.io/seo-audit-en.html">
+  <link rel="alternate" hreflang="x-default" href="https://m0hamedseo-bot.github.io/seo-audit.html">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/language.css">
+  <title>Free Website SEO & Speed Check | Mohamed Adam</title>
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="Mohamed Adam | SEO">
+  <meta property="og:title" content="Free Website SEO and Speed Check">
+  <meta property="og:description" content="Run a Lighthouse check for performance, SEO, accessibility, and best practices on a web page.">
+  <meta property="og:url" content="https://m0hamedseo-bot.github.io/seo-audit-en.html">
+  <meta name="twitter:card" content="summary">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Website SEO and Speed Audit",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "Any",
+    "inLanguage": "en",
+    "description": "A free interface for starting a Google PageSpeed Insights and Lighthouse check for a web page.",
+    "url": "https://m0hamedseo-bot.github.io/seo-audit-en.html",
+    "offers": {"@type":"Offer","price":"0","priceCurrency":"USD"},
+    "author": {"@type":"Person","name":"Mohamed Adam","url":"https://m0hamedseo-bot.github.io/index-en.html"}
+  }
+  </script>
+  <!-- Google Analytics: keep this measurement ID unchanged -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MZ240XWNPS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-MZ240XWNPS');
+  </script>
+  <style>
+    :root{--bg:#f6f8f7;--surface:#fff;--soft:#edf5f3;--text:#172522;--muted:#5c6c67;--accent:#0b6b63;--accent-dark:#07564f;--border:#dce6e2;--warning:#8a5a00;--warning-bg:#fff4d9;--danger:#a53030;--danger-bg:#ffeded;--success:#146b45;--success-bg:#e3f5eb;--shadow:0 14px 38px rgba(19,55,47,.065)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,"Segoe UI",Arial,sans-serif;line-height:1.8}
+    a{color:var(--accent)}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #c56b13;outline-offset:4px}
+    button,input,select{font:inherit}.container{width:min(1050px,calc(100% - 36px));margin:auto}
+    header{background:var(--surface);border-bottom:1px solid var(--border)}.head{min-height:68px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{color:var(--text);text-decoration:none;font-weight:900}.brand span{color:var(--accent)}.back{font-weight:800;text-decoration:none}
+    .hero{padding:54px 0 40px;background:linear-gradient(135deg,var(--surface),var(--soft));border-bottom:1px solid var(--border)}
+    .tag{display:inline-block;padding:5px 12px;border-radius:999px;background:#d9eeea;color:var(--accent);font-size:.86rem;font-weight:900}
+    h1{margin:14px 0 10px;font-size:clamp(2rem,5vw,3.1rem);line-height:1.2}h2{margin:0 0 10px;font-size:1.4rem}
+    .lead{max-width:800px;margin:0;color:var(--muted);font-size:1.05rem}main{padding:27px 0 58px}
+    .panel{padding:24px;border:1px solid var(--border);border-radius:17px;background:var(--surface);box-shadow:var(--shadow)}
+    .form-grid{display:grid;grid-template-columns:minmax(0,1fr) 230px;gap:13px;align-items:end}
+    .field{display:grid;gap:6px}label{font-weight:800;font-size:.92rem}
+    input,select{width:100%;min-height:48px;padding:10px 13px;border:1px solid var(--border);border-radius:10px;background:var(--surface);color:var(--text)}
+    .hint{margin:8px 0 0;color:var(--muted);font-size:.84rem}
+    .button{display:inline-flex;min-height:48px;align-items:center;justify-content:center;border:0;border-radius:10px;padding:10px 19px;background:var(--accent);color:#fff;text-decoration:none;font-weight:900;cursor:pointer}
+    .button:hover{background:var(--accent-dark)}.button:disabled{opacity:.65;cursor:wait}
+    .status{display:none;margin-top:17px;padding:13px 15px;border-radius:10px;background:var(--soft);color:var(--text)}
+    .status.show{display:block}.status.error{background:var(--danger-bg);color:var(--danger)}.status.warn{background:var(--warning-bg);color:var(--warning)}
+    .status a{display:inline-block;margin-top:9px;font-weight:900;text-decoration:underline;text-underline-offset:3px}
+    .results{display:none;margin-top:22px}.results.show{display:block}
+    .result-head{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:15px}
+    .tested-url{color:var(--muted);font-size:.88rem;overflow-wrap:anywhere}
+    .scores{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+    .score{padding:16px 13px;border:1px solid var(--border);border-radius:12px;background:var(--surface);text-align:center}
+    .score strong{display:block;font-size:2rem;line-height:1.3;color:var(--accent)}.score span{display:block;color:var(--muted);font-size:.88rem;font-weight:800}.score small{display:block;margin-top:4px;color:var(--muted)}
+    .metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:13px}
+    .metric{padding:13px;border:1px solid var(--border);border-radius:11px;background:var(--soft)}
+    .metric strong{display:block;font-size:1.05rem}.metric span{color:var(--muted);font-size:.84rem}
+    .issues{margin-top:21px}.issues-list{display:grid;gap:9px;padding:0;list-style:none}
+    .issues-list li{padding:12px 14px;border:1px solid var(--border);border-radius:10px;background:var(--surface)}
+    .issues-list strong{display:block;margin-bottom:4px}.issues-list p{margin:0;color:var(--muted);font-size:.9rem}
+    .empty{padding:13px 15px;border-radius:10px;background:var(--success-bg);color:var(--success)}
+    .follow{display:none;margin-top:16px;padding:17px;border:1px solid var(--border);border-radius:12px;background:var(--soft)}
+    .follow.show{display:block}.follow p{margin:5px 0 12px;color:var(--muted)}
+    .disclaimer{margin-top:17px;color:var(--muted);font-size:.86rem}
+    .tools{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:20px}
+    .tool{display:block;padding:14px;border:1px solid var(--border);border-radius:11px;background:var(--surface);text-decoration:none}
+    .tool strong{display:block;color:var(--text)}.tool span{display:block;color:var(--muted);font-size:.84rem}
+    footer{padding:23px 0;border-top:1px solid var(--border);text-align:center;color:var(--muted);font-size:.9rem}footer a{font-weight:800;text-decoration:none}
+    @media(max-width:760px){.form-grid{grid-template-columns:1fr}.scores{grid-template-columns:repeat(2,minmax(0,1fr))}.metrics{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:520px){.container{width:calc(100% - 28px)}.head{min-height:62px}.hero{padding:40px 0 30px}.panel{padding:17px}.tools,.metrics{grid-template-columns:1fr}.result-head{display:block}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  </style>
+</head>
+<body>
+  <header><div class="container head">
+    <a class="brand" href="/index-en.html">Mohamed Adam <span>| SEO</span></a>
+    <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+      <a class="back" href="/index-en.html">← Back to homepage</a>
+      <a class="lang-switch" href="/seo-audit.html" data-language-switch data-target-lang="ar" lang="ar" hreflang="ar">العربية</a>
+    </div>
+  </div></header>
+
+  <section class="hero"><div class="container">
+    <span class="tag">Free website check</span>
+    <h1>Check your website page speed and SEO</h1>
+    <p class="lead">Enter a page URL and choose a device. The tool requests Lighthouse data from Google PageSpeed Insights for performance, SEO, accessibility, and best-practice signals, then displays the available metrics and suggested improvements.</p>
+  </div></section>
+
+  <main class="container">
+    <section class="panel" aria-labelledby="audit-heading">
+      <h2 id="audit-heading">Run a page audit</h2>
+      <form id="audit-form">
+        <div class="form-grid">
+          <div class="field"><label for="site-url">Page URL</label><input id="site-url" name="url" type="url" inputmode="url" placeholder="https://example.com/product" required></div>
+          <div class="field"><label for="strategy">Device</label><select id="strategy" name="strategy"><option value="mobile" selected>Mobile</option><option value="desktop">Desktop</option></select></div>
+        </div>
+        <p class="hint">Start with one important URL, such as your homepage or a product page. You can repeat the audit for other pages.</p>
+        <div style="margin-top:15px"><button class="button" id="run-button" type="submit">Run page audit</button></div>
+      </form>
+      <div class="status" id="status" role="status" aria-live="polite"></div>
+
+      <section class="results" id="results" aria-live="polite">
+        <div class="result-head">
+          <div><h2>Audit results</h2><div class="tested-url" id="tested-url"></div></div>
+          <a class="button" id="pagespeed-link" href="https://pagespeed.web.dev/" target="_blank" rel="noopener noreferrer">Open Google report</a>
+        </div>
+        <div class="scores">
+          <div class="score"><strong id="score-performance">—</strong><span>Performance</span><small>Lighthouse</small></div>
+          <div class="score"><strong id="score-seo">—</strong><span>SEO</span><small>Lighthouse checks</small></div>
+          <div class="score"><strong id="score-accessibility">—</strong><span>Accessibility</span><small>Lighthouse</small></div>
+          <div class="score"><strong id="score-best">—</strong><span>Best practices</span><small>Lighthouse</small></div>
+        </div>
+        <div class="issues"><h2>Performance metrics</h2><div class="metrics" id="metrics"></div></div>
+        <div class="issues"><h2>SEO opportunities identified by Lighthouse</h2><ul class="issues-list" id="issues-list"></ul></div>
+        <div class="follow" id="follow">
+          <h2>Would you like a deeper review?</h2>
+          <p>Send the test summary and page URL to Mohamed Adam to discuss priorities and next steps.</p>
+          <a class="button" id="whatsapp-link" href="https://wa.me/249906105357" target="_blank" rel="noopener noreferrer">Send audit summary on WhatsApp</a>
+        </div>
+      </section>
+      <p class="disclaimer">Note: This is an automated result for one URL and device at the time of testing. It is not a full-site SEO audit and does not guarantee Google rankings. Results may vary with device, network, and page conditions. Never submit passwords or account credentials.</p>
+    </section>
+
+    <section style="margin-top:21px">
+      <h2>Other free Google tools</h2>
+      <div class="tools">
+        <a class="tool" href="https://search.google.com/test/rich-results" target="_blank" rel="noopener noreferrer"><strong>Rich Results Test</strong><span>Check structured data and rich result eligibility</span></a>
+        <a class="tool" href="https://search.google.com/search-console" target="_blank" rel="noopener noreferrer"><strong>Google Search Console</strong><span>Monitor indexing and search performance</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="container">© <span id="year">2026</span> Mohamed Adam · <a href="/index-en.html">Home</a> · <a href="/seo-ecommerce-en.html">Ecommerce SEO</a></div></footer>
+
+  <script>
+    (function () {
+      var form = document.getElementById('audit-form');
+      var input = document.getElementById('site-url');
+      var strategy = document.getElementById('strategy');
+      var runButton = document.getElementById('run-button');
+      var statusBox = document.getElementById('status');
+      var results = document.getElementById('results');
+
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      function setStatus(message, type) {
+        statusBox.textContent = message;
+        statusBox.className = 'status show' + (type ? ' ' + type : '');
+      }
+
+      function safeUrl(value) {
+        var parsed;
+        try { parsed = new URL(value); }
+        catch (error) { throw new Error('Enter a valid URL starting with https:// or http://.'); }
+        if (parsed.protocol !== 'https:' && parsed.protocol !== 'http:') throw new Error('Only public HTTP and HTTPS URLs are allowed.');
+        if (!parsed.hostname || parsed.hostname.indexOf('.') === -1) throw new Error('Enter a complete domain name, such as example.com.');
+        return parsed.href;
+      }
+
+      function scoreText(score) {
+        return typeof score === 'number' ? Math.round(score * 100) + '/100' : 'Unavailable';
+      }
+
+      function addMetric(container, label, value) {
+        var item = document.createElement('div');
+        item.className = 'metric';
+        var strong = document.createElement('strong');
+        strong.textContent = value;
+        var title = document.createElement('span');
+        title.textContent = label;
+        item.appendChild(strong);
+        item.appendChild(title);
+        container.appendChild(item);
+      }
+
+      function safeDescription(audit) {
+        var text = audit && audit.description ? String(audit.description) : '';
+        return text.replace(/\[([^\]]+)\]\((https?:\/\/[^)]+)\)/g, '$1: $2');
+      }
+
+      function renderReport(data, url, device) {
+        var lighthouse = data.lighthouseResult;
+        if (!lighthouse || !lighthouse.categories || !lighthouse.audits) throw new Error('Google returned an incomplete report. Please try again.');
+
+        document.getElementById('score-performance').textContent = scoreText(lighthouse.categories.performance && lighthouse.categories.performance.score);
+        document.getElementById('score-seo').textContent = scoreText(lighthouse.categories.seo && lighthouse.categories.seo.score);
+        document.getElementById('score-accessibility').textContent = scoreText(lighthouse.categories.accessibility && lighthouse.categories.accessibility.score);
+        document.getElementById('score-best').textContent = scoreText(lighthouse.categories['best-practices'] && lighthouse.categories['best-practices'].score);
+        document.getElementById('tested-url').textContent = url + ' · ' + (device === 'mobile' ? 'Mobile' : 'Desktop');
+        document.getElementById('pagespeed-link').href = 'https://pagespeed.web.dev/analysis?url=' + encodeURIComponent(url);
+
+        var audits = lighthouse.audits;
+        var metrics = document.getElementById('metrics');
+        metrics.textContent = '';
+        [
+          ['first-contentful-paint', 'First Contentful Paint'],
+          ['largest-contentful-paint', 'Largest Contentful Paint'],
+          ['total-blocking-time', 'Total Blocking Time'],
+          ['cumulative-layout-shift', 'Cumulative Layout Shift'],
+          ['speed-index', 'Speed Index'],
+          ['interactive', 'Time to Interactive']
+        ].forEach(function (entry) {
+          var audit = audits[entry[0]];
+          if (audit && audit.displayValue) addMetric(metrics, entry[1], audit.displayValue);
+        });
+
+        var issueList = document.getElementById('issues-list');
+        issueList.textContent = '';
+        var seoRefs = lighthouse.categories.seo ? lighthouse.categories.seo.auditRefs : [];
+        var failed = (seoRefs || []).map(function (ref) { return audits[ref.id]; }).filter(function (audit) {
+          return audit && audit.score === 0 && audit.scoreDisplayMode !== 'notApplicable' &&
+            audit.scoreDisplayMode !== 'manual' && audit.scoreDisplayMode !== 'informative';
+        }).slice(0, 8);
+
+        if (failed.length === 0) {
+          var empty = document.createElement('li');
+          empty.className = 'empty';
+          empty.textContent = 'Lighthouse did not identify failed automated SEO checks for this page. This does not mean every SEO aspect has been audited or that rankings are guaranteed.';
+          issueList.appendChild(empty);
+        } else {
+          failed.forEach(function (audit) {
+            var li = document.createElement('li');
+            var title = document.createElement('strong');
+            title.textContent = audit.title || 'SEO opportunity';
+            var description = document.createElement('p');
+            description.textContent = safeDescription(audit);
+            li.appendChild(title);
+            if (description.textContent) li.appendChild(description);
+            issueList.appendChild(li);
+          });
+        }
+
+        var summary = 'Hello Mohamed, I would like an SEO review for this page:\n' +
+          'URL: ' + url + '\n' +
+          'Device: ' + (device === 'mobile' ? 'Mobile' : 'Desktop') + '\n' +
+          'Performance: ' + document.getElementById('score-performance').textContent + '\n' +
+          'SEO: ' + document.getElementById('score-seo').textContent + '\n' +
+          'Accessibility: ' + document.getElementById('score-accessibility').textContent + '\n' +
+          'Best practices: ' + document.getElementById('score-best').textContent + '\n' +
+          'Main findings: ' + (failed.length ? failed.map(function (a) { return a.title; }).join(', ') : 'No failed automated SEO checks');
+        document.getElementById('whatsapp-link').href = 'https://wa.me/249906105357?text=' + encodeURIComponent(summary);
+        document.getElementById('follow').className = 'follow show';
+        results.className = 'results show';
+      }
+
+      form.addEventListener('submit', async function (event) {
+        event.preventDefault();
+        results.className = 'results';
+        var url;
+        try { url = safeUrl(input.value.trim()); }
+        catch (error) { setStatus(error.message, 'error'); input.focus(); return; }
+
+        var device = strategy.value;
+        var endpoint = new URL('https://www.googleapis.com/pagespeedonline/v5/runPagespeed');
+        endpoint.searchParams.set('url', url);
+        endpoint.searchParams.set('strategy', device.toUpperCase());
+        ['PERFORMANCE', 'ACCESSIBILITY', 'BEST_PRACTICES', 'SEO'].forEach(function (category) {
+          endpoint.searchParams.append('category', category);
+        });
+
+        runButton.disabled = true;
+        runButton.textContent = 'Running audit…';
+        setStatus('Lighthouse is running through Google PageSpeed Insights. This may take a little time; please keep this page open.', '');
+
+        try {
+          var response = await fetch(endpoint.toString(), { method: 'GET' });
+          var payload = await response.json();
+          if (!response.ok) {
+            var apiMessage = payload && payload.error && payload.error.message;
+            throw new Error(apiMessage || 'The audit could not be completed. Google may be busy or a temporary usage limit may have been reached.');
+          }
+          renderReport(payload, url, device);
+          setStatus('Audit complete. These results apply to the selected URL and device at the time of testing.', '');
+          results.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } catch (error) {
+          var message = error && error.message ? error.message : '';
+          var quotaError = /quota exceeded|queries per day|rate limit|resource_exhausted|429/i.test(message);
+          if (quotaError) {
+            statusBox.textContent = 'The available Google PageSpeed Insights API request quota has been reached for now. This does not mean there is a problem with your website. You can run the test through Google’s official tool instead:';
+            statusBox.className = 'status show warn';
+            var fallbackLink = document.createElement('a');
+            fallbackLink.href = 'https://pagespeed.web.dev/analysis?url=' + encodeURIComponent(url);
+            fallbackLink.target = '_blank';
+            fallbackLink.rel = 'noopener noreferrer';
+            fallbackLink.textContent = 'Open the Google PageSpeed Insights report';
+            statusBox.appendChild(document.createElement('br'));
+            statusBox.appendChild(fallbackLink);
+          } else {
+            if (error instanceof TypeError) message = 'Could not connect to Google from this browser. Try again or open the PageSpeed Insights report directly.';
+            setStatus(message || 'An unexpected error occurred. Please try again.', 'error');
+          }
+        } finally {
+          runButton.disabled = false;
+          runButton.textContent = 'Run audit again';
+        }
+      });
+    }());
+  </script>
+  <script src="/language.js" defer></script>
+</body>
+</html>
