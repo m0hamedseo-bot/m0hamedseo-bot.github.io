@@ -1,4 +1,71 @@
 (function () {
+  var legacyHost = 'm0hamedseo-bot.github.io';
+  var oldOrigin = 'https://m0hamedseo-bot.github.io';
+  var newOrigin = 'https://m0hamedseo-bot-github-io.pages.dev';
+
+  function normalizePath(path) {
+    if (path === '/index.html') return '/';
+    if (/\/index\.html$/i.test(path)) return path.slice(0, -'index.html'.length);
+    if (/\.html$/i.test(path)) return path.slice(0, -5);
+    return path;
+  }
+
+  function migrateUrl(value) {
+    if (typeof value !== 'string') return value;
+    value = value.replace(oldOrigin, newOrigin);
+    if (value.indexOf(newOrigin) === 0) {
+      var rest = value.slice(newOrigin.length);
+      var cut = rest.search(/[?#]/);
+      var path = cut < 0 ? rest : rest.slice(0, cut);
+      var suffix = cut < 0 ? '' : rest.slice(cut);
+      return newOrigin + normalizePath(path) + suffix;
+    }
+    if (value.charAt(0) === '/' && value.indexOf('//') !== 0) {
+      var pos = value.search(/[?#]/);
+      var path = pos < 0 ? value : value.slice(0, pos);
+      var suffix = pos < 0 ? '' : value.slice(pos);
+      return normalizePath(path) + suffix;
+    }
+    return value;
+  }
+
+  // Redirect visitors from the old GitHub Pages host to the matching Cloudflare URL.
+  if (location.hostname === legacyHost) {
+    location.replace(newOrigin + normalizePath(location.pathname) + location.search + location.hash);
+    return;
+  }
+
+  // Keep SEO metadata and structured data aligned with the Cloudflare Pages origin.
+  document.querySelectorAll('link[rel="canonical"], link[rel="alternate"][hreflang]').forEach(function (link) {
+    link.href = migrateUrl(link.href);
+  });
+
+  document.querySelectorAll('meta[property="og:url"], meta[name="twitter:url"]').forEach(function (meta) {
+    meta.setAttribute('content', migrateUrl(meta.getAttribute('content')));
+  });
+
+  document.querySelectorAll('script[type="application/ld+json"]').forEach(function (script) {
+    try {
+      var data = JSON.parse(script.textContent);
+      function walk(value) {
+        if (Array.isArray(value)) {
+          value.forEach(walk);
+        } else if (value && typeof value === 'object') {
+          Object.keys(value).forEach(function (key) {
+            if (typeof value[key] === 'string') value[key] = migrateUrl(value[key]);
+            else walk(value[key]);
+          });
+        }
+      }
+      walk(data);
+      script.textContent = JSON.stringify(data);
+    } catch (error) {
+      // Leave invalid or non-JSON-LD script content untouched.
+    }
+  });
+}());
+
+(function () {
   var storageKey = 'mohamed-seo-language-preference';
   var currentLang = (document.documentElement.lang || 'ar').toLowerCase().indexOf('en') === 0 ? 'en' : 'ar';
   var savedChoice = null;
