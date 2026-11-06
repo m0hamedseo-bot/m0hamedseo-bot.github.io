@@ -86,6 +86,12 @@
       }
       var ogTitle = document.querySelector('meta[property="og:title"]');
       if (ogTitle) ogTitle.content = document.title;
+      var ogDescription = document.querySelector('meta[property="og:description"]');
+      if (ogDescription && description) ogDescription.content = description.content;
+      var twitterTitle = document.querySelector('meta[name="twitter:title"]');
+      if (twitterTitle) twitterTitle.content = document.title;
+      var twitterDescription = document.querySelector('meta[name="twitter:description"]');
+      if (twitterDescription && description) twitterDescription.content = description.content;
     }
   }
 }());
