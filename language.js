@@ -1,41 +1,32 @@
 (function () {
-  var legacyHost = 'm0hamedseo-bot.github.io';
-  var oldOrigin = 'https://m0hamedseo-bot.github.io';
-  var newOrigin = 'https://m0hamedseo-bot-github-io.pages.dev';
+  var oldOrigin = 'https://m0hamedseo-bot-github-io.pages.dev';
+  var siteOrigin = 'https://m0hamedseo-bot.github.io';
 
-  function normalizePath(path) {
-    if (path === '/index.html') return '/';
-    if (/\/index\.html$/i.test(path)) return path.slice(0, -'index.html'.length);
-    if (/\.html$/i.test(path)) return path.slice(0, -5);
-    return path;
+  function withHtmlPath(path) {
+    var match = path.match(/^([^?#]*)(.*)$/);
+    var pathname = match[1];
+    var suffix = match[2];
+
+    if (pathname === '/index.html') pathname = '/';
+    else if (pathname === '/blog/index.html') pathname = '/blog/';
+    else if (pathname === '/index-en' || pathname === '/blog/index-en') pathname += '.html';
+    else if (pathname === '/blog') pathname = '/blog/';
+    else if (pathname !== '/' && !pathname.endsWith('/') && !/\.[^/]+$/.test(pathname)) pathname += '.html';
+
+    return pathname + suffix;
   }
 
   function migrateUrl(value) {
     if (typeof value !== 'string') return value;
-    value = value.replace(oldOrigin, newOrigin);
-    if (value.indexOf(newOrigin) === 0) {
-      var rest = value.slice(newOrigin.length);
-      var cut = rest.search(/[?#]/);
-      var path = cut < 0 ? rest : rest.slice(0, cut);
-      var suffix = cut < 0 ? '' : rest.slice(cut);
-      return newOrigin + normalizePath(path) + suffix;
+    if (value.indexOf(oldOrigin) === 0) {
+      return siteOrigin + withHtmlPath(value.slice(oldOrigin.length) || '/');
     }
     if (value.charAt(0) === '/' && value.indexOf('//') !== 0) {
-      var pos = value.search(/[?#]/);
-      var path = pos < 0 ? value : value.slice(0, pos);
-      var suffix = pos < 0 ? '' : value.slice(pos);
-      return normalizePath(path) + suffix;
+      return withHtmlPath(value);
     }
     return value;
   }
 
-  // Redirect visitors from the old GitHub Pages host to the matching Cloudflare URL.
-  if (location.hostname === legacyHost) {
-    location.replace(newOrigin + normalizePath(location.pathname) + location.search + location.hash);
-    return;
-  }
-
-  // Keep SEO metadata and structured data aligned with the Cloudflare Pages origin.
   document.querySelectorAll('link[rel="canonical"], link[rel="alternate"][hreflang]').forEach(function (link) {
     link.href = migrateUrl(link.href);
   });
@@ -44,13 +35,16 @@
     meta.setAttribute('content', migrateUrl(meta.getAttribute('content')));
   });
 
+  document.querySelectorAll('a[href^="/"]').forEach(function (link) {
+    link.setAttribute('href', migrateUrl(link.getAttribute('href')));
+  });
+
   document.querySelectorAll('script[type="application/ld+json"]').forEach(function (script) {
     try {
       var data = JSON.parse(script.textContent);
       function walk(value) {
-        if (Array.isArray(value)) {
-          value.forEach(walk);
-        } else if (value && typeof value === 'object') {
+        if (Array.isArray(value)) value.forEach(walk);
+        else if (value && typeof value === 'object') {
           Object.keys(value).forEach(function (key) {
             if (typeof value[key] === 'string') value[key] = migrateUrl(value[key]);
             else walk(value[key]);
@@ -60,9 +54,40 @@
       walk(data);
       script.textContent = JSON.stringify(data);
     } catch (error) {
-      // Leave invalid or non-JSON-LD script content untouched.
+      // Keep malformed JSON-LD untouched.
     }
   });
+
+  var articlePath = location.pathname.match(/^\/blog\/([^/]+?)(?:\.html)?\/?$/);
+  if (articlePath && articlePath[1] !== 'index-en' && articlePath[1] !== 'index') {
+    var slug = articlePath[1];
+    var language = (document.documentElement.lang || 'ar').toLowerCase().indexOf('en') === 0 ? 'en' : 'ar';
+    var platformKey = slug.split('-')[0];
+    var platformNames = {
+      salla: { ar: 'سلة', en: 'Salla' },
+      zid: { ar: 'زد', en: 'Zid' },
+      shopify: { ar: 'Shopify', en: 'Shopify' },
+      woocommerce: { ar: 'WooCommerce', en: 'WooCommerce' },
+      expandcart: { ar: 'إكسباند كارت', en: 'ExpandCart' },
+      magento: { ar: 'Magento', en: 'Adobe Commerce' },
+      'wix-stores': { ar: 'Wix Stores', en: 'Wix Stores' },
+      bigcommerce: { ar: 'BigCommerce', en: 'BigCommerce' },
+      opencart: { ar: 'OpenCart', en: 'OpenCart' },
+      prestashop: { ar: 'PrestaShop', en: 'PrestaShop' }
+    };
+    if (slug.indexOf('wix-stores-') === 0) platformKey = 'wix-stores';
+    var platform = platformNames[platformKey] && platformNames[platformKey][language];
+    if (platform && document.title.indexOf(platform + ' | ') !== 0) {
+      document.title = platform + ' | ' + document.title;
+      var description = document.querySelector('meta[name="description"]');
+      if (description) {
+        var prefix = language === 'ar' ? 'دليل SEO لمتجر ' + platform + ': ' : platform + ' store SEO guide: ';
+        if (description.content.indexOf(prefix) !== 0) description.content = prefix + description.content;
+      }
+      var ogTitle = document.querySelector('meta[property="og:title"]');
+      if (ogTitle) ogTitle.content = document.title;
+    }
+  }
 }());
 
 (function () {
