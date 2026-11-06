@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b6b63">
+  <meta name="description" content="نموذج تقرير مراجعة متجر إلكتروني، بخانات للمشكلات حسب الخطورة والحل المقترح وطريقة قياس الأثر.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="canonical" href="https://m0hamedseo-bot-github-io.pages.dev/sample-audit">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/language.css">
+  <title>نموذج تقرير مراجعة متجر إلكتروني | محمد آدم</title>
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ar_AR">
+  <meta property="og:site_name" content="محمد آدم | SEO">
+  <meta property="og:title" content="نموذج تقرير مراجعة متجر إلكتروني | محمد آدم">
+  <meta property="og:description" content="نموذج تقرير مراجعة متجر إلكتروني، بخانات للمشكلات حسب الخطورة والحل المقترح وطريقة قياس الأثر.">
+  <meta property="og:url" content="https://m0hamedseo-bot-github-io.pages.dev/sample-audit">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="نموذج تقرير مراجعة متجر إلكتروني | محمد آدم">
+  <meta name="twitter:description" content="نموذج تقرير مراجعة متجر إلكتروني، بخانات للمشكلات حسب الخطورة والحل المقترح وطريقة قياس الأثر.">
+  <style>
+    :root { color-scheme: light; --bg:#f6f8f7; --surface:#fff; --soft:#edf5f3; --text:#172522; --muted:#5c6c67; --accent:#0b6b63; --border:#dce6e2; --header:rgba(246,248,247,.9); --shadow:0 18px 50px rgba(19,55,47,.08); }
+    :root[data-theme="dark"] { color-scheme:dark; --bg:#101715; --surface:#18221f; --soft:#1d302b; --text:#edf5f1; --muted:#b3c2bc; --accent:#70d0c1; --border:#31433c; --header:rgba(16,23,21,.9); --shadow:0 18px 50px rgba(0,0,0,.2); }
+    @media(prefers-color-scheme:dark) { :root:not([data-theme="light"]) { color-scheme:dark; --bg:#101715; --surface:#18221f; --soft:#1d302b; --text:#edf5f1; --muted:#b3c2bc; --accent:#70d0c1; --border:#31433c; --header:rgba(16,23,21,.9); --shadow:0 18px 50px rgba(0,0,0,.2); } }
+    *,*::before,*::after { box-sizing:border-box; }
+    html { scroll-behavior:smooth; scroll-padding-top:100px; }
+    body { margin:0; background:var(--bg); color:var(--text); font:16px/1.85 "Tajawal","Segoe UI",Tahoma,Arial,sans-serif; overflow-wrap:anywhere; }
+    a { color:var(--accent); }
+    a:focus-visible,button:focus-visible { outline:3px solid #c56b13; outline-offset:4px; }
+    .container { width:min(960px,calc(100% - 40px)); margin-inline:auto; }
+    .site-header { position:sticky; top:0; z-index:5; background:var(--header); border-bottom:1px solid var(--border); backdrop-filter:blur(14px); }
+    .header-inner { min-height:76px; display:flex; align-items:center; justify-content:space-between; gap:16px; padding-block:12px; }
+    .brand { color:var(--text); text-decoration:none; font-weight:900; white-space:nowrap; }
+    .brand span { color:var(--accent); }
+    .nav-links { display:flex; flex-wrap:wrap; align-items:center; gap:6px 16px; }
+    .nav-links a { color:var(--muted); text-decoration:none; font-size:.92rem; font-weight:700; }
+    .theme-toggle { min-height:40px; padding:6px 12px; border:1px solid var(--border); border-radius:10px; background:var(--surface); color:var(--text); font:inherit; font-size:.86rem; font-weight:700; cursor:pointer; white-space:nowrap; }
+    main { padding-block:54px 72px; }
+    .intro { margin-bottom:30px; }
+    .kicker { color:var(--accent); font-size:.86rem; font-weight:900; }
+    h1 { margin:4px 0 8px; font-size:clamp(2rem,5vw,3rem); line-height:1.4; }
+    .lead,.note { color:var(--muted); }
+    .summary,.issue { padding:24px; border:1px solid var(--border); border-radius:18px; background:var(--surface); box-shadow:var(--shadow); }
+    .summary { margin-bottom:28px; }
+    h2 { margin:0 0 12px; font-size:1.45rem; }
+    h3 { margin:0 0 14px; font-size:1.18rem; }
+    .placeholder { margin:0; color:var(--muted); }
+    .severity { margin-block:28px; }
+    .severity h2 { display:flex; align-items:center; gap:10px; }
+    .severity h2::before { content:""; width:12px; height:12px; border-radius:50%; background:var(--accent); }
+    .severity.high h2::before { background:#d34d4d; }
+    .severity.medium h2::before { background:#cc8b19; }
+    .severity.low h2::before { background:#27805a; }
+    .fields { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
+    .field { padding:16px; border-radius:12px; background:var(--soft); }
+    .field strong { display:block; margin-bottom:5px; }
+    .note { margin-top:34px; padding:18px; border-inline-start:4px solid var(--accent); border-radius:8px; background:var(--surface); }
+    footer { padding:22px 0; border-top:1px solid var(--border); color:var(--muted); text-align:center; }
+    @media(max-width:700px) { .header-inner { align-items:flex-start; flex-direction:column; } .container { width:min(100% - 30px,540px); } .fields { grid-template-columns:1fr; } main { padding-top:38px; } .summary,.issue { padding:19px; } }
+    @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/" aria-label="محمد آدم، الصفحة الرئيسية">محمد آدم <span>| SEO</span></a>
+      <nav class="nav-links" aria-label="التنقل الرئيسي">
+        <a href="/">الرئيسية</a>
+        <a href="/#services">الخدمات</a>
+        <a href="/#portfolio">الأعمال</a>
+        <a href="/#contact">تواصل</a>
+      </nav>
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="false">☾ الوضع الداكن</button>
+    </div>
+  </header>
+  <main class="container">
+    <header class="intro">
+      <span class="kicker">SEO للمتاجر الإلكترونية</span>
+      <h1>نموذج تقرير مراجعة متجر</h1>
+    </header>
+    <section class="summary" aria-labelledby="summary-heading">
+      <h2 id="summary-heading">ملخص تنفيذي</h2>
+      <p class="placeholder">[TODO: الملخص التنفيذي]</p>
+    </section>
+    <section class="severity high" aria-labelledby="high-heading">
+      <h2 id="high-heading">مشكلات عالية الخطورة</h2>
+      <article class="issue">
+        <h3>[TODO: عنوان المشكلة عالية الخطورة]</h3>
+        <div class="fields">
+          <div class="field"><strong>الوصف</strong><p class="placeholder">[TODO: وصف المشكلة]</p></div>
+          <div class="field"><strong>لماذا تهم</strong><p class="placeholder">[TODO: لماذا تهم المشكلة]</p></div>
+          <div class="field"><strong>الحل المقترح</strong><p class="placeholder">[TODO: الحل المقترح]</p></div>
+          <div class="field"><strong>كيف نقيس الأثر</strong><p class="placeholder">[TODO: طريقة قياس الأثر]</p></div>
+        </div>
+      </article>
+    </section>
+    <section class="severity medium" aria-labelledby="medium-heading">
+      <h2 id="medium-heading">مشكلات متوسطة الخطورة</h2>
+      <article class="issue">
+        <h3>[TODO: عنوان المشكلة متوسطة الخطورة]</h3>
+        <div class="fields">
+          <div class="field"><strong>الوصف</strong><p class="placeholder">[TODO: وصف المشكلة]</p></div>
+          <div class="field"><strong>لماذا تهم</strong><p class="placeholder">[TODO: لماذا تهم المشكلة]</p></div>
+          <div class="field"><strong>الحل المقترح</strong><p class="placeholder">[TODO: الحل المقترح]</p></div>
+          <div class="field"><strong>كيف نقيس الأثر</strong><p class="placeholder">[TODO: طريقة قياس الأثر]</p></div>
+        </div>
+      </article>
+    </section>
+    <section class="severity low" aria-labelledby="low-heading">
+      <h2 id="low-heading">مشكلات منخفضة الخطورة</h2>
+      <article class="issue">
+        <h3>[TODO: عنوان المشكلة منخفضة الخطورة]</h3>
+        <div class="fields">
+          <div class="field"><strong>الوصف</strong><p class="placeholder">[TODO: وصف المشكلة]</p></div>
+          <div class="field"><strong>لماذا تهم</strong><p class="placeholder">[TODO: لماذا تهم المشكلة]</p></div>
+          <div class="field"><strong>الحل المقترح</strong><p class="placeholder">[TODO: الحل المقترح]</p></div>
+          <div class="field"><strong>كيف نقيس الأثر</strong><p class="placeholder">[TODO: طريقة قياس الأثر]</p></div>
+        </div>
+      </article>
+    </section>
+    <p class="note">ملاحظة: هذا النموذج مبني على موقع فعلي بعد إخفاء هويته.</p>
+  </main>
+  <footer><div class="container"><a href="/">العودة إلى موقع محمد آدم</a></div></footer>
+  <script>
+    (function () {
+      var root = document.documentElement;
+      var toggle = document.getElementById('theme-toggle');
+      var savedTheme = null;
+      try { savedTheme = localStorage.getItem('mohamed-seo-theme'); } catch (error) { savedTheme = null; }
+      if (savedTheme === 'dark' || savedTheme === 'light') root.setAttribute('data-theme', savedTheme);
+      else root.setAttribute('data-theme', window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      function updateThemeButton() {
+        var isDark = root.getAttribute('data-theme') === 'dark';
+        toggle.textContent = isDark ? '☀ الوضع الفاتح' : '☾ الوضع الداكن';
+        toggle.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+      }
+      toggle.addEventListener('click', function () {
+        var nextTheme = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', nextTheme);
+        try { localStorage.setItem('mohamed-seo-theme', nextTheme); } catch (error) { /* الوضع يعمل لهذه الزيارة. */ }
+        updateThemeButton();
+      });
+      updateThemeButton();
+    }());
+  </script>
+</body>
+</html>
+
