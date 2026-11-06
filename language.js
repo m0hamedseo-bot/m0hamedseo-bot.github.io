@@ -29,12 +29,6 @@
     return value;
   }
 
-  // Redirect visitors from the old GitHub Pages host to the matching Cloudflare URL.
-  if (location.hostname === legacyHost) {
-    location.replace(newOrigin + normalizePath(location.pathname) + location.search + location.hash);
-    return;
-  }
-
   // Keep SEO metadata and structured data aligned with the Cloudflare Pages origin.
   document.querySelectorAll('link[rel="canonical"], link[rel="alternate"][hreflang]').forEach(function (link) {
     link.href = migrateUrl(link.href);
