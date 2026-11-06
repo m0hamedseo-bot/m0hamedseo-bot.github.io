@@ -4,12 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0b6b63">
+  <meta name="color-scheme" content="light dark">
   <meta name="description" content="Free website SEO and speed check using Google PageSpeed Insights and Lighthouse. Review performance, SEO, accessibility, and best-practice signals.">
   <meta name="robots" content="index,follow,max-image-preview:large">
-  <link rel="canonical" href="https://m0hamedseo-bot-github-io.pages.dev/seo-audit-en">
-  <link rel="alternate" hreflang="ar" href="https://m0hamedseo-bot-github-io.pages.dev/seo-audit">
-  <link rel="alternate" hreflang="en" href="https://m0hamedseo-bot-github-io.pages.dev/seo-audit-en">
-  <link rel="alternate" hreflang="x-default" href="https://m0hamedseo-bot-github-io.pages.dev/seo-audit">
+  <link rel="canonical" href="https://m0hamedseo-bot.github.io/seo-audit-en.html">
+  <link rel="alternate" hreflang="ar" href="https://m0hamedseo-bot.github.io/seo-audit.html">
+  <link rel="alternate" hreflang="en" href="https://m0hamedseo-bot.github.io/seo-audit-en.html">
+  <link rel="alternate" hreflang="x-default" href="https://m0hamedseo-bot.github.io/seo-audit.html">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/language.css">
   <title>Free Website SEO & Speed Check | Mohamed Adam</title>
@@ -18,7 +19,7 @@
   <meta property="og:site_name" content="Mohamed Adam | SEO">
   <meta property="og:title" content="Free Website SEO and Speed Check">
   <meta property="og:description" content="Run a Lighthouse check for performance, SEO, accessibility, and best practices on a web page.">
-  <meta property="og:url" content="https://m0hamedseo-bot-github-io.pages.dev/seo-audit-en">
+  <meta property="og:url" content="https://m0hamedseo-bot.github.io/seo-audit-en.html">
   <meta name="twitter:card" content="summary">
   <script type="application/ld+json">
   {
@@ -29,9 +30,9 @@
     "operatingSystem": "Any",
     "inLanguage": "en",
     "description": "A free interface for starting a Google PageSpeed Insights and Lighthouse check for a web page.",
-    "url": "https://m0hamedseo-bot-github-io.pages.dev/seo-audit-en",
+    "url": "https://m0hamedseo-bot.github.io/seo-audit-en.html",
     "offers": {"@type":"Offer","price":"0","priceCurrency":"USD"},
-    "author": {"@type":"Person","name":"Mohamed Adam","url":"https://m0hamedseo-bot-github-io.pages.dev/index-en"}
+    "author": {"@type":"Person","name":"Mohamed Adam","url":"https://m0hamedseo-bot.github.io/index-en.html"}
   }
   </script>
   <!-- Google Analytics: keep this measurement ID unchanged -->
@@ -86,14 +87,19 @@
     @media(max-width:760px){.form-grid{grid-template-columns:1fr}.scores{grid-template-columns:repeat(2,minmax(0,1fr))}.metrics{grid-template-columns:repeat(2,minmax(0,1fr))}}
     @media(max-width:520px){.container{width:calc(100% - 28px)}.head{min-height:62px}.hero{padding:40px 0 30px}.panel{padding:17px}.tools,.metrics{grid-template-columns:1fr}.result-head{display:block}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-  </style>
+  
+  @media (prefers-color-scheme: dark) {
+    :root { color-scheme: dark; --bg:#101715; --surface:#18221f; --soft:#1d302b; --surface-soft:#1d302b; --card:#18221f; --input:#18221f; --text:#edf5f1; --muted:#b3c2bc; --accent:#70d0c1; --accent-dark:#07564f; --border:#31433c; --line:#31433c; --shadow:0 18px 50px rgba(0,0,0,.22); }
+    .kicker, .tag, .kind { background-color:#203d36; color:#91e0d2; }
+  }
+</style>
 </head>
 <body>
   <header><div class="container head">
-    <a class="brand" href="/index-en">Mohamed Adam <span>| SEO</span></a>
+    <a class="brand" href="/index-en.html">Mohamed Adam <span>| SEO</span></a>
     <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
-      <a class="back" href="/index-en">← Back to homepage</a>
-      <a class="lang-switch" href="/seo-audit" data-language-switch data-target-lang="ar" lang="ar" hreflang="ar">العربية</a>
+      <a class="back" href="/index-en.html">← Back to homepage</a>
+      <a class="lang-switch" href="/seo-audit.html" data-language-switch data-target-lang="ar" lang="ar" hreflang="ar">العربية</a>
     </div>
   </div></header>
 
@@ -147,7 +153,7 @@
     </section>
   </main>
 
-  <footer><div class="container">© <span id="year">2026</span> Mohamed Adam · <a href="/index-en">Home</a> · <a href="/seo-ecommerce-en">Ecommerce SEO</a> · <a href="/request-project-en">Request SEO</a> · <a href="/blog/index-en">Articles</a></div></footer>
+  <footer><div class="container">© <span id="year">2026</span> Mohamed Adam · <a href="/index-en.html">Home</a> · <a href="/seo-ecommerce-en.html">Ecommerce SEO</a> · <a href="/request-project-en.html">Request SEO</a> · <a href="/blog/index-en.html">Articles</a></div></footer>
 
   <script>
     (function () {
@@ -247,13 +253,20 @@
           });
         }
 
-        var summary = 'Hello Mohamed, I would like an SEO review for this page:\n' +
-          'URL: ' + url + '\n' +
-          'Device: ' + (device === 'mobile' ? 'Mobile' : 'Desktop') + '\n' +
-          'Performance: ' + document.getElementById('score-performance').textContent + '\n' +
-          'SEO: ' + document.getElementById('score-seo').textContent + '\n' +
-          'Accessibility: ' + document.getElementById('score-accessibility').textContent + '\n' +
-          'Best practices: ' + document.getElementById('score-best').textContent + '\n' +
+        var summary = 'Hello Mohamed, I would like an SEO review for this page:
+' +
+          'URL: ' + url + '
+' +
+          'Device: ' + (device === 'mobile' ? 'Mobile' : 'Desktop') + '
+' +
+          'Performance: ' + document.getElementById('score-performance').textContent + '
+' +
+          'SEO: ' + document.getElementById('score-seo').textContent + '
+' +
+          'Accessibility: ' + document.getElementById('score-accessibility').textContent + '
+' +
+          'Best practices: ' + document.getElementById('score-best').textContent + '
+' +
           'Main findings: ' + (failed.length ? failed.map(function (a) { return a.title; }).join(', ') : 'No failed automated SEO checks');
         document.getElementById('whatsapp-link').href = 'https://wa.me/249906105357?text=' + encodeURIComponent(summary);
         document.getElementById('follow').className = 'follow show';
